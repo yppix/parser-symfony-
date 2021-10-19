@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Введите данные
+{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+    {{ form(form) }}
+    {{ form_end(form) }}
+{% endblock %}

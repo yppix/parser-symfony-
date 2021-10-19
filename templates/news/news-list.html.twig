@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Список новостей/h1>
+    {% for news_item in news_array %}
+        <div style="margin-bottom: 20px; border-bottom: 1px solid; padding-bottom: 20px;">
+             {% for img in news_item.src %}
+            <div>
+                <img width="500px" src="{{img.src}}">
+            </div>
+            {% endfor %}
+            <div>{{ news_item.text}}</div>
+            <div>{{ news_item.theme}}</div>
+            <div>{{ news_item.time_publication}}</div>
+            <div><button formtarget="_blank" onclick="window.open('{{news_item.link}}')">Подробнее</button></div>
+        </div>
+    {% endfor %}
+{% endblock %}
