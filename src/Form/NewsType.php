@@ -13,7 +13,12 @@ class NewsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('url',TextType::class, ['label' => 'Введите новостной URL',])
+            ->add('url',TextType::class, array(
+                'label' => 'Введите новостной URL',
+                'required'=>true,
+                'help' => 'Insert URL of website you want to parse.',
+
+            ))
 //            ->add('basic', TextType::class, ['label' => 'Введите родительский элемент',])
 //            ->add('text', TextType::class, ['label' => 'Введите текстовый элемент',])
 //            ->add('helper', TextType::class, ['label' => 'Введите вспомогательный элемент',])
